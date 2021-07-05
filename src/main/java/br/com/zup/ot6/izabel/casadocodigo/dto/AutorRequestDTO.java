@@ -7,8 +7,6 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import br.com.zup.ot6.izabel.casadocodigo.entidades.Autor;
-import br.com.zup.ot6.izabel.casadocodigo.excecoes.ValidaCampoVazio;
-import br.com.zup.ot6.izabel.casadocodigo.excecoes.ValidaQuantidadeCaracteres;
 
 
 public class AutorRequestDTO {
@@ -32,27 +30,7 @@ public class AutorRequestDTO {
 	}
 
 	public Autor converterParaEntidade(AutorRequestDTO autorRequestDTO) {
-		if(!validaQuantidadeCaracteres(descricao)) {
-			throw new ValidaQuantidadeCaracteres("Quantidade de caracteres acima do permitido");
-		}
-		
-		if(!validaCamposVazios(nome) || !validaCamposVazios(email)) {
-			throw new ValidaCampoVazio("Campo obrigatório");
-		}
 		return new Autor(this.nome, this.email, this.descricao);
 	}
 	
-	public boolean validaQuantidadeCaracteres(String caracteres) {
-		if(caracteres.length()>400) {
-			return false;
-		}		
-		return true;
-	}
-	
-	public boolean validaCamposVazios(String campo) {
-		if(campo.isBlank()) {
-			return false;
-		}		
-		return true;
-	}
 }

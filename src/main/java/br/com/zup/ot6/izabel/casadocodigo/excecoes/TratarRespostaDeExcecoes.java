@@ -23,7 +23,8 @@ public class TratarRespostaDeExcecoes {
     }
 
     private HttpStatus getHttpStatus(Exception e){
-        if(e instanceof ValidaQuantidadeCaracteres || e instanceof ValidaCampoVazio){
+        if(e instanceof ValidaQuantidadeCaracteres || e instanceof ValidaCampoVazio
+        	|| e instanceof ValidaEmailDuplicado) {
             return HttpStatus.BAD_REQUEST;
         }
         return HttpStatus.INTERNAL_SERVER_ERROR;
