@@ -7,6 +7,7 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import br.com.zup.ot6.izabel.casadocodigo.entidades.Autor;
+import br.com.zup.ot6.izabel.casadocodigo.excecoes.UniqueValue;
 
 
 public class AutorRequestDTO {
@@ -19,6 +20,7 @@ public class AutorRequestDTO {
 	private String descricao;
 	@NotBlank
 	@Email
+	@UniqueValue(domainClass = Autor.class, fieldName = "email")
 	@JsonProperty("email")
 	private String email;
 
