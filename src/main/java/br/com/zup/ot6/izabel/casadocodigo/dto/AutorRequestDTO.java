@@ -30,7 +30,11 @@ public class AutorRequestDTO {
 	}
 
 	public Autor converterParaEntidade(AutorRequestDTO autorRequestDTO) {
-		return new Autor(this.nome, this.email, this.descricao);
+		return new Autor(this.nome, this.descricao, this.email);
+	}
+
+	public String getEmail() {
+		return email;
 	}
 	
 }
