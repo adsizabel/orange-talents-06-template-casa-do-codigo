@@ -71,5 +71,39 @@ public class Livro {
 				+ preco + ", numeroPaginas=" + numeroPaginas + ", dataPublicacao=" + dataPublicacao + ", isbn=" + isbn
 				+ ", categoriaLivro=" + categoriaLivro + ", autorLivro=" + autorLivro + "]";
 	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public String getResumo() {
+		return resumo;
+	}
+
+	public String getSumario() {
+		return sumario;
+	}
+
+	public BigDecimal getPreco() {
+		return preco;
+	}
+
+	public Integer getNumeroPaginas() {
+		return numeroPaginas;
+	}
+
+	public LocalDate getDataPublicacao() {
+		return dataPublicacao;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public Autor getAutorLivro() {
+		return autorLivro;
+	}
+
+	
 	
 }
