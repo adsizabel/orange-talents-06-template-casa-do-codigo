@@ -10,22 +10,24 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.zup.ot6.izabel.casadocodigo.dto.CategoriaRequestDTO;
-import br.com.zup.ot6.izabel.casadocodigo.entidades.Categoria;
+import br.com.zup.ot6.izabel.casadocodigo.dto.LivroRequestDTO;
+import br.com.zup.ot6.izabel.casadocodigo.entidades.Livro;
 
 @RestController
-@RequestMapping(path = "/categoria")
-public class CategoriaControlador {
+@RequestMapping(path = "/livro")
+public class LivroControlador {
 	
 	@PersistenceContext
-	EntityManager entityManager;
+	private EntityManager entityManager;
 	
 	@PostMapping
 	@Transactional
-	public String cadastrarCategoria(@RequestBody @Valid CategoriaRequestDTO categoriaRequestDTO) {
-		Categoria categoria = categoriaRequestDTO.converterParaEntidade(categoriaRequestDTO);
-		entityManager.persist(categoria);
-		return categoria.toString();
+	public String cadastrarAluno(@RequestBody @Valid LivroRequestDTO livroRequestDTO){
+		 Livro livro = livroRequestDTO.converterParaEntidade(entityManager);
+		 
+		 entityManager.persist(livro);
+		 return livro.toString();
+		
 	}
 
 }

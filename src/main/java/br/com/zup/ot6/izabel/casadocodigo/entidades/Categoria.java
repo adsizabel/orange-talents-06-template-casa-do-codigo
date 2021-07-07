@@ -19,7 +19,7 @@ public class Categoria {
 	private String nome;
 	
 	public Categoria() {}
-
+	
 	public Categoria(@NotBlank String nome) {
 		super();
 		this.nome = nome;
