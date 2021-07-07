@@ -22,7 +22,7 @@ public class AutorControlador {
 	
 	@PostMapping
 	@Transactional
-	public String cadastrarAluno(@RequestBody @Valid AutorRequestDTO autorRequestDTO){
+	public String cadastrarAutor(@RequestBody @Valid AutorRequestDTO autorRequestDTO){
 		 Autor autor = autorRequestDTO.converterParaEntidade(autorRequestDTO);
 		 
 		 entityManager.persist(autor);
