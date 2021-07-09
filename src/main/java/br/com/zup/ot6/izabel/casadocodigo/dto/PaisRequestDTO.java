@@ -1,6 +1,5 @@
 package br.com.zup.ot6.izabel.casadocodigo.dto;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonCreator;

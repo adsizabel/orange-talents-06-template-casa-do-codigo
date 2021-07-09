@@ -1,7 +1,6 @@
 package br.com.zup.ot6.izabel.casadocodigo.dto;
 
 import javax.persistence.EntityManager;
-import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -33,12 +32,17 @@ public class EstadoRequestDTO {
 		Pais paisPesquisado = entityManager.find(Pais.class, idPais);
 		return new Estado(nome, paisPesquisado);
 	}
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public Long getIdPais() {
+		return idPais;
+	}
 
 	@Override
 	public String toString() {
 		return "EstadoRequestDTO [nome=" + nome + ", pais_Id=" + idPais + "]";
 	}
-
-	
-
 }

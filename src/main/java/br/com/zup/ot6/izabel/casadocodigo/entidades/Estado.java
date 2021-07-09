@@ -1,6 +1,5 @@
 package br.com.zup.ot6.izabel.casadocodigo.entidades;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

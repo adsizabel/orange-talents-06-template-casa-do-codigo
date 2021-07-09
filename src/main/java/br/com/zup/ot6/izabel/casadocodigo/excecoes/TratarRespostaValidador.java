@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-public class TratarRespostaValidator {
+public class TratarRespostaValidador {
 	
 	MessageSource messageSource;
 	
 	@Autowired
-	public TratarRespostaValidator(MessageSource messageSource) {
+	public TratarRespostaValidador(MessageSource messageSource) {
 		super();
 		this.messageSource = messageSource;
 	}
